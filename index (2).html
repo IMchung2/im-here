@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sweetie Quest 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2em;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      transition: background-image 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .screen {
+      display: none;
+      margin-top: 2em;
+      background-color: rgba(0,0,0,0.6);
+      padding: 2em;
+      border-radius: 20px;
+    }
+
+    button {
+      padding: 1em 2em;
+      font-size: 1.2em;
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      margin: 1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #ff1e4b;
+    }
+
+    .emoji {
+      font-size: 2em;
+      margin-top: 1em;
+    }
+
+    .spicy {
+      color: #ffd6d6;
+      font-style: italic;
+      margin-top: 1.5em;
+    }
+
+    footer {
+      margin-top: 3em;
+      font-size: 0.8em;
+      color: #eee;
+      text-shadow: 1px 1px 3px #000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 Sweetie Quest 💘</h1>
+
+  <div id="startScreen" class="screen" style="display: block;">
+    <p>Hey Sweetie (a.k.a. my WiFi 🔌), ready for a love-powered adventure?</p>
+    <button onclick="nextScreen('q1')">Start Game 🎮</button>
+  </div>
+
+  <div id="q1" class="screen">
+    <p>Who’s the cutest in the world?</p>
+    <button onclick="nextScreen('q2')">(me) 😽</button>
+    <button onclick="nextScreen('q2')">(still me) 😎</button>
+    <div class="emoji">😻</div>
+  </div>
+
+  <div id="q2" class="screen">
+    <p>What’s stronger than WiFi?</p>
+    <button onclick="nextScreen('q3')">Our Connection 💘</button>
+    <button onclick="nextScreen('q3')">Our Vibes ✨</button>
+    <div class="emoji">📶❤️</div>
+  </div>
+
+  <div id="q3" class="screen">
+    <p>If we had a kid , would it be?</p>
+    <button onclick="nextScreen('q4')">girl</button>
+    <button onclick="nextScreen('q4')">boy</button>
+  </div>
+
+  <div id="q4" class="screen">
+    <p>Which one is true?</p>
+    <button onclick="nextScreen('q5')"> im not g@y</button>
+    <button onclick="nextScreen('q5')">im g@y</button>
+  </div>
+
+  <div id="q5" class="screen">
+    <p>Final Boss Level:</p>
+    <p>What happens if (me) doesn't get your cuddles?</p>
+    <button onclick="nextScreen('final')">He cries 😿</button>
+    <button onclick="nextScreen('final')">He explodes from cuteness overload 💥</button>
+    <div class="emoji">🐱❤️🔥</div>
+  </div>
+
+  <div id="final" class="screen">
+    <p>🎉 You did it, Sweetie! You won (me) again 🏆</p>
+    <p>I love you, i miss you, but im sorry i couldn't give you a thing.</p>
+    <p class="spicy">Do you know...  
+    If we were in the same room right now,<br>
+    this game would’ve ended with a lot less talking and a lot more... 😳💋🔥</p>
+    <p>— Forever yours,<br>(me) 💖</p>
+  </div>
+
+  <footer>
+    made it cause i idk wat to give you...  — your Kitty 
+  </footer>
+
+  <script>
+    function nextScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // Image slideshow for background
+    const images = [
+      'https://i.postimg.cc/HLWvY649/IMG-20250731-193703-758.jpg',  // Replace with your couple/mood images
+      'https://i.postimg.cc/prvFv6K2/IMG-20250723-210458-664.jpg',
+      'https://i.postimg.cc/4xxpnqqy/IMG-20250731-193624-627.jpg',
+      'https://i.postimg.cc/wjqQL7y6/IMG-20250731-193526-454.jpg',
+      'https://i.postimg.cc/J0RGvBW0/IMG-20250731-193541-573.jpg',
+    ];
+    let index = 0;
+    function changeBackground() {
+      document.body.style.backgroundImage = `url(${images[index]})`;
+      index = (index + 1) % images.length;
+    }
+    setInterval(changeBackground, 5000); // every 5 seconds
+    changeBackground();
+  </script>
+
+</body>
+</html>
